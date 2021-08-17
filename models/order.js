@@ -1,4 +1,4 @@
-const mongoose = required("mongoose")
+const mongoose = require("mongoose")
 const { ObjectId } = mongoose.Schema
 
 const ProductCartSchema = new mongoose.Schema({
@@ -17,6 +17,11 @@ const OrderSchema = new mongoose.Schema({
     transation_id: {},
     amount: {type:Number},
     address: String,
+    status: {
+        type: String,
+        default: "Received",
+        enum: ["Cancelled", "Delivered", "Shipped", "Processing", "Received"]
+    },
     update: Date,
     user:{
         type: ObjectId,

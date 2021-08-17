@@ -1,4 +1,4 @@
-const mongoose = required("mongoose")
+const mongoose = require("mongoose")
 const {ObjectId} = mongoose.Schema;
 const productSchema = new mongoose.Schema({
          name: {
